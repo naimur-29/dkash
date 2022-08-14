@@ -1,0 +1,219 @@
+.navbar-section-container {
+  max-width: 1180px;
+  padding: 0 10px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 52px;
+  background-color: var(--navbar-bg);
+
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    .right {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 50%;
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .logo {
+          width: 35px;
+          height: 35px;
+        }
+
+        .text {
+          font-size: 1.5rem;
+          font-weight: 500;
+          color: var(--logo-text);
+        }
+      }
+
+      .menus {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+
+        .item {
+          font-size: 1.2rem;
+          font-weight: 500;
+          color: var(--menu-item);
+          border-bottom: 2px solid transparent;
+          transition: all 0.15s ease;
+
+          @media (hover: hover) {
+            &:hover {
+              color: var(--menu-item-active);
+              transition: all 0.15s ease;
+              transform: translateY(-1px);
+            }
+          }
+
+          &.active {
+            color: var(--menu-item-active);
+            border-color: var(--menu-item-border);
+          }
+        }
+      }
+
+      @media (max-width: 820px) {
+        .menus {
+          display: none;
+        }
+      }
+    }
+
+    .left {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      width: 50%;
+
+      .btn {
+        font-size: 1.2rem;
+        font-weight: 500;
+        padding: 12px 22px;
+        border: none;
+        border-radius: 6px;
+        background-color: #fff;
+        cursor: pointer;
+        transition: all 0.15s ease-in;
+
+        &:active {
+          transform: scale(0.95);
+          transition: all 0.15s ease;
+        }
+
+        &.login {
+          background-color: var(--menu-btn1);
+          color: var(--menu-btn2);
+        }
+
+        &.signup {
+          background-color: var(--menu-btn2);
+          color: var(--menu-btn1);
+        }
+      }
+
+      @media (max-width: 820px) {
+        .btn {
+          display: none;
+        }
+      }
+
+      .mobile-nav {
+        display: none;
+      }
+
+      @media (max-width: 820px) {
+        .mobile-nav {
+          display: flex;
+          align-items: flex-end;
+          justify-content: center;
+          flex-direction: column;
+          gap: 6px;
+          width: 100px;
+          height: 42px;
+          padding: 0 10px;
+          cursor: pointer;
+          z-index: 10;
+
+          .line {
+            width: 35px;
+            height: 4px;
+            background-color: var(--logo-text);
+            transition: all 0.35s ease-in;
+          }
+
+          &.active {
+            .line {
+              background-color: #fff;
+
+              &:nth-child(1) {
+                transform: translateY(10px) rotate(45deg);
+              }
+
+              &:nth-child(2) {
+                opacity: 0;
+              }
+
+              &:nth-child(3) {
+                transform: translateY(-10px) rotate(-45deg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  @media (max-width: 820px) {
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 300px;
+      height: 100vh;
+      padding: 100px 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      background-color: var(--mobile-menu-bg);
+      transition: all 0.35s ease-in;
+
+      .menus {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+
+        .item {
+          font-size: 1.4rem;
+          cursor: pointer;
+          width: 100%;
+          font-weight: 500;
+          color: #fff;
+          border-bottom: 2px solid transparent;
+
+          &.active {
+            border-color: var(--mobile-menu-item-border);
+          }
+        }
+      }
+
+      &.active {
+        right: 0;
+      }
+    }
+  }
+
+  @media (max-width: 460px) {
+    .mobile-menu {
+      width: 100vw;
+    }
+  }
+}
+
+@media (max-width: 820px) {
+  .navbar-section-container {
+    padding: 10px;
+  }
+}
