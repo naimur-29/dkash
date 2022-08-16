@@ -8,7 +8,7 @@ const App = () => {
   return (
     <section className="t-light">
       <Navbar />
-      {/* <Hero /> */}
+      <Hero />
     </section>
   );
 };

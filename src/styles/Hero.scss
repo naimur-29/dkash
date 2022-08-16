@@ -1,2 +1,119 @@
-.hero-container {
+.hero-section-container {
+  padding: 100px 10px;
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 70px 10px;
+
+    .info {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--text-gray);
+    }
+
+    .title {
+      padding: 0;
+      margin: 0;
+      font-size: 4rem;
+      color: var(--text-dark-violet);
+
+      span {
+        color: var(--text-violet);
+      }
+    }
+
+    .description {
+      font-size: 1.2rem;
+      color: var(--text-gray);
+      margin-bottom: 50px;
+    }
+
+    .bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      box-shadow: 0px 10px 50px -10px rgba(0, 0, 0, 0.15);
+      padding: 8px;
+      border-radius: 6px;
+
+      .email {
+        width: 70%;
+        height: 50px;
+        border: none;
+        outline: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 15px;
+        font-size: 1.2rem;
+        color: var(--text-gray);
+      }
+
+      .btn {
+        background-color: var(--text-violet);
+        color: var(--text-white);
+        border: none;
+        border-radius: 6px;
+        font-size: 1.2rem;
+        padding: 16px 22px;
+        cursor: pointer;
+        transition: all 0.15s ease-in;
+
+        @media (hover: hover) {
+          &:hover {
+            opacity: 0.9;
+          }
+        }
+
+        &:active {
+          transform: scale(0.9);
+        }
+      }
+    }
+  }
+
+  .right {
+    width: 50%;
+  }
+}
+
+@media (max-width: 1040px) {
+  .hero-section-container {
+    flex-direction: column-reverse;
+
+    .left {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .info {
+        text-align: center;
+      }
+
+      .title {
+        text-align: center;
+      }
+    }
+
+    .right {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }
